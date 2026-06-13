@@ -1,0 +1,228 @@
+@import "tailwindcss";
+
+:root {
+  /* Chronotype Premium Color System */
+  --midnight: #0A1421;
+  --navy: #121C2E;
+  --deep-navy: #0D1624;
+  --teal: #0F766E;
+  --emerald: #0D9488;
+  --cyan: #67E8F9;
+  --soft-cyan: #A5F3FC;
+  --warm-white: #FAF8F5;
+  --cream: #F5F2ED;
+  --stone: #EDE8E0;
+  --slate: #64748B;
+  --gold: #C5A46E;
+  --sunrise: #E8B86D;
+  --dawn: #F4D9B0;
+  --owl-purple: #4C3F6E;
+  --eagle-amber: #B97D3A;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Premium Typography */
+h1, h2, h3 {
+  font-feature-settings: "tnum", "ss01";
+}
+
+.text-display {
+  font-size: clamp(3.25rem, 7vw, 6.75rem);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+.text-hero-sub {
+  font-size: clamp(1.125rem, 2.1vw, 1.5rem);
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+}
+
+/* Glassmorphism - used sparingly */
+.glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass-dark {
+  background: rgba(18, 28, 46, 0.65);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Section Alternation Styles */
+.section-light {
+  background: var(--warm-white);
+}
+
+.section-dark {
+  background: var(--midnight);
+  color: white;
+}
+
+.section-navy {
+  background: var(--navy);
+}
+
+/* Premium Buttons */
+.btn-premium {
+  transition: all 0.2s cubic-bezier(0.23, 1.0, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-premium:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px -15px rgb(0 0 0 / 0.25);
+}
+
+.btn-premium:active {
+  transform: translateY(0);
+}
+
+.btn-teal {
+  background: var(--teal);
+  color: white;
+}
+
+.btn-teal:hover {
+  background: var(--emerald);
+}
+
+/* Elegant Card Styles - Different per section */
+.card-lark {
+  background: linear-gradient(145deg, #FEF9F0 0%, #F8F0E3 100%);
+  border: 1px solid #F4E9D8;
+}
+
+.card-eagle {
+  background: linear-gradient(145deg, #F8F6F1 0%, #F0E9DB 100%);
+  border: 1px solid #E6D9C4;
+}
+
+.card-owl {
+  background: linear-gradient(145deg, #F2F1F8 0%, #E8E5F0 100%);
+  border: 1px solid #D8D2E6;
+}
+
+/* Floating Elements */
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+/* Sleep Cycle Visual */
+.sleep-stage {
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.sleep-cycle-ring {
+  transition: stroke-dashoffset 1.2s cubic-bezier(0.23, 1.0, 0.32, 1);
+}
+
+/* Premium Inputs */
+.input-premium {
+  background: white;
+  border: 1px solid #E5E1D8;
+  transition: all 0.15s ease;
+}
+
+.input-premium:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.08);
+  outline: none;
+}
+
+/* Dark Inputs */
+.input-dark {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: white;
+}
+
+.input-dark:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 4px rgba(103, 232, 249, 0.1);
+}
+
+/* FAQ Accordion */
+.faq-question {
+  transition: all 0.2s ease;
+}
+
+.faq-question:hover {
+  color: var(--teal);
+}
+
+/* Chronotype Energy Graph */
+.energy-bar {
+  transition: height 1.1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Table Styles - Premium */
+.table-premium th {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #64748B;
+}
+
+.table-premium td {
+  border-top: 1px solid #EDE8E0;
+}
+
+/* Dashboard Glass Nav */
+.dashboard-nav {
+  background: rgba(250, 248, 245, 0.96);
+  backdrop-filter: blur(20px);
+}
+
+/* Scroll Progress */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--teal), var(--cyan));
+  z-index: 100;
+  transition: width 0.05s linear;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9C2B5;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A39A89;
+}
+
+/* Motion safe */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Responsive Typography Scaling */
+@media (max-width: 640px) {
+  .text-display {
+    font-size: 3.1rem;
+  }
+}
