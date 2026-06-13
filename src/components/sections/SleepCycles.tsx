@@ -19,7 +19,7 @@ export function SleepCycles() {
 
         {/* Central Sleep Cycle Visualization */}
         <div className="relative mb-24">
-          <div className="flex flex-col lg:flex-row gap-4">
+          <div className="flex flex-col lg:flex-row gap-6">
             {sleepCycleStages.map((stage, index) => {
               const Icon = stageIcons[index];
               return (
@@ -29,28 +29,33 @@ export function SleepCycles() {
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ delay: index * 0.1, duration: 0.6, type: "spring" }}
                   whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                  className="flex-1 bg-gradient-to-b from-[#121C2E] to-[#0D1624] rounded-3xl p-10 group border border-white/8 hover:border-[#67E8F9]/30 transition-colors"
+                  className="flex-1 bg-gradient-to-b from-[#121C2E] to-[#0D1624] rounded-3xl p-8 flex flex-col min-h-[280px] group border border-white/8 hover:border-[#67E8F9]/30 transition-colors"
                 >
-                  <div className="flex items-baseline justify-between mb-10">
-                    <div className="flex items-center gap-3">
+                  {/* Header with Icon and Stage Info */}
+                  <div className="flex items-start justify-between mb-8">
+                    <div className="flex items-center gap-3.5">
                       <div className="p-2.5 rounded-xl bg-white/5 group-hover:bg-[#67E8F9]/10 transition-colors">
                         <Icon className="w-5 h-5" style={{ color: stageColors[index] }} />
                       </div>
                       <div>
-                        <div className="font-mono text-[11px] tracking-[4px] text-[#67E8F9]">{stage.name}</div>
-                        <div className="text-8xl font-semibold text-white tracking-[-5px] mt-1">{stage.pct}<span className="text-3xl align-super font-normal">%</span></div>
+                        <div className="font-mono text-[10px] tracking-[3px] text-[#67E8F9] uppercase">Stage {stage.name}</div>
+                        <div className="text-5xl font-semibold text-white tracking-[-2px] mt-1">{stage.pct}<span className="text-xl align-super font-normal">%</span></div>
                       </div>
                     </div>
-                    <div className="text-right">
+                    <div className="text-right pt-1">
                       <div className="text-[9px] tracking-[2px] text-[#64748B]">STAGE</div>
-                      <div className="text-3xl font-semibold text-[#A5B4C2]">{index + 1}</div>
+                      <div className="text-xl font-semibold text-[#A5B4C2]">{index + 1}</div>
                       <div className="text-[9px] text-[#64748B]">OF 4</div>
                     </div>
                   </div>
                   
-                  <div className="text-[#A5B4C2] leading-tight text-[16px] mb-8">{stage.desc}</div>
+                  {/* Description - flex-grow to fill space */}
+                  <div className="flex-grow">
+                    <div className="text-[#A5B4C2] leading-relaxed text-[15px]">{stage.desc}</div>
+                  </div>
                   
-                  <div className="relative h-2 rounded-full bg-white/8 overflow-hidden">
+                  {/* Progress Bar */}
+                  <div className="mt-8 relative h-2 rounded-full bg-white/8 overflow-hidden">
                     <motion.div 
                       className="h-2 rounded-full"
                       style={{ background: `linear-gradient(to right, ${stageColors[index]}, ${stageColors[(index + 1) % stageColors.length]})` }}
