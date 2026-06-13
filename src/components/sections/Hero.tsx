@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Play, Moon, Sparkles, Stars } from 'lucide-react';
+import { ArrowRight, Play, Moon } from 'lucide-react';
 
 interface HeroProps {
   content: { heroTitle: string; heroSubtitle: string };
@@ -33,25 +33,11 @@ export function Hero({ content, onExplore }: HeroProps) {
       <div className="absolute bottom-0 left-0 w-96 h-96 border-t border-t-[#EDE8E0] opacity-12" />
       
       <div className="relative z-10 max-w-6xl mx-auto px-9">
-        {/* Premium floating badge */}
-        <motion.div 
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex justify-center mb-14"
-        >
-          <div className="inline-flex items-center gap-3 px-8 py-3 rounded-full bg-white/85 backdrop-blur-xl border border-[#EDE8E0] text-xs tracking-[4px] font-medium text-[#0F766E] shadow-lg">
-            <Sparkles className="w-4 h-4" />
-            A PREMIUM SLEEP AWARENESS ECOSYSTEM
-            <Stars className="w-3 h-3 opacity-60" />
-          </div>
-        </motion.div>
-        
         {/* Display headline with premium layered typography */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.1 }}
+          transition={{ duration: 0.9 }}
           className="text-center mb-14"
         >
           <h1 className="text-display text-[#0A1421] tracking-[-0.045em] mb-3 leading-[0.92]">
